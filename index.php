@@ -1,7 +1,7 @@
 <?php 
 include 'header.php';
-
 ?>
+// delete this
 <html>
 <form action="newpatient.php" method="get">
 <input value="Enter New Patient" type="submit">

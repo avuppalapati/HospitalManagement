@@ -33,7 +33,7 @@ header{
 }
 
 .container{
-    width: 80%;
+    width: 70%;
     margin: auto;
     overflow: hidden;
 }
@@ -45,6 +45,7 @@ header{
     border: #3B945E solid 5px;
     border-radius: 20px;
     padding: 10px;
+    display: table;
 }
 
 ul{
@@ -52,11 +53,6 @@ ul{
     padding: 0;
     list-style-type: none;
     width: 75%;
-}
-
-li{
-    float: left;
-    padding: 20px;
 }
 
 li a{
