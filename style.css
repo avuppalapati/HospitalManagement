@@ -8,12 +8,18 @@ body{
 }
 
 /* Global */
-h1{
+#logo{
     text-align: center;
-    color: #182628;
 }
 
-h2{
+#logo a{
+    color: #182628;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+h1{
     text-align: center;
     margin-top: 0px;
 }
@@ -21,7 +27,7 @@ h2{
 header{
     background: #3B945E;
     color: #182628;
-    min-height: 70px;
+    height: 80px;
     border-bottom: #182628 8px solid;
     position: fixed;
     top: 0;
@@ -29,16 +35,16 @@ header{
 }
 
 .main{
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
 .container{
     width: 70%;
-    margin: auto;
+    margin: 20px auto;
     overflow: hidden;
 }
 
-.form{
+.box{
     width: 70%;
     margin: auto;
     background-color: #57BA98;
@@ -48,16 +54,21 @@ header{
     display: table;
 }
 
-ul{
-    margin: auto;
-    padding: 0;
-    list-style-type: none;
-    width: 75%;
+/* Homepage buttons */
+.form{
+    display: flex;
+    justify-content: space-evenly;
 }
 
-li a{
-    color: black;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
+.buttons{
+    background-color: aquamarine;
+    border: 2px solid ;
+    border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.buttons:hover{
+    background-color: #3B945E;
 }

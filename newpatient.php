@@ -5,21 +5,21 @@ include 'header.php';
     <head>
             <meta charset="utf-8">
             <meta name="viewport:" content="width=device-width">
-            <title>Hospital Management Interface | Home</title>
+            <title>Hospital Management Interface | New Patient</title>
             <link rel="stylesheet" href="./style.css">
-        </head>
+    </head>
     <body>
         <header>
             <div class="container">
                 <div id="logo">
-                    <h1>Hospital Management System</h1>
+                    <a href="index.php">Hospital Management System</a>
                 </div>
             </div>
         </header>
 
         <section class="main">
                 <div class="container">
-                    <div class="form">
+                    <div class="box">
                     <form action="formquery.php" method="post">
                         <label for="pssn">Social Security:</label><br>
                         <input type="password" id="pssn" name="pssn" placeholder="XXX-XX-XXXX" maxlength="9"><br><br>
