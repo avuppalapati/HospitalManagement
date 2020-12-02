@@ -1,26 +1,15 @@
 <?php
+$title = "Hospital Management Interface | New Patient";
 include 'header.php';
 ?>
-<HTML>
-    <head>
-            <meta charset="utf-8">
-            <meta name="viewport:" content="width=device-width">
-            <title>Hospital Management Interface | New Patient</title>
-            <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <div id="logo">
-                    <a href="index.php">Hospital Management System</a>
-                </div>
-            </div>
-        </header>
 
-        <section class="main">
+<HTML>
+<title>Default Form</title>
+<body>
+<section class="main">
                 <div class="container">
                     <div class="box">
-                    <form action="formquery.php" method="post">
+                    <form action="npatientquery.php" method="post">
                         <label for="pssn">Social Security:</label><br>
                         <input type="password" id="pssn" name="pssn" placeholder="XXX-XX-XXXX" maxlength="9"><br><br>
                         
@@ -76,6 +65,7 @@ include 'header.php';
                         
                         <label for="ec">Emergency Contact</label>
                         <select name="ec" id="ec">
+                        <option value="" disabled selected hidden>Select Contact</option>
                         <?php 
                             $query = 'select ecname from emergency_contact';
                             $result = mysqli_query($con, $query);
