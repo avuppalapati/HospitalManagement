@@ -30,7 +30,7 @@ include 'header.php';
                         <input type="number" id="weight" name="weight" placeholder="In pounds"><br><br>
                         
                         <label for="diagnosis">Diagnosis:</label><br>
-                        <textarea name="diagnosis" id="diagnosis" cols="70" rows="10" placeholder="Type Here"></textarea><br><br>
+                        <textarea id="diagnosis" name="diagnosis" cols="70" rows="10" placeholder="Type Here"></textarea><br><br>
                         
                         <label for="doctor">Doctor:</label>
                         <select name="doctor" id="doctor">

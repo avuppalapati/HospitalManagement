@@ -7,12 +7,12 @@ $sex = $_POST["sex"];
 $dob = $_POST["birthday"];
 $weight = $_POST["weight"];
 $diagnosis = $_POST["diagnosis"];
-$dname = $_POST["doctor"];
+$drname = $_POST["doctor"];
 $nname = $_POST["nurse"];
 $iname = $_POST["insurance"];
 $ecname = $_POST["ec"];
 
-$query = "SELECT dssn FROM `hospitaldb`.`doctors` WHERE dname = '$dname' ";
+$query = "SELECT dssn FROM `hospitaldb`.`doctors` WHERE drname = '$drname' ";
 $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
 $dssn = $row['dssn'];
