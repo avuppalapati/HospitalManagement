@@ -32,7 +32,7 @@ $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
 $essn = $row['essn'];
 
-$query = "INSERT INTO `hospitaldb`.`patients`(`pssn`, `pname`, `sex`, `dob`, `weight`, `diagnosis`, `doctor_id`, 
+$query = "INSERT INTO `hospitaldb`.`patients` (`pssn`, `pname`, `sex`, `dob`, `weight`, `diagnosis`, `doctor_id`, 
 `insurance_id`, `nurse_id`, `ec_id`) VALUES ('$pssn', '$pname', '$sex', '$dob', '$weight', '$diagnosis', '$dssn', 
 '$iid', '$nssn', '$essn')";
 $result = mysqli_query($con, $query);

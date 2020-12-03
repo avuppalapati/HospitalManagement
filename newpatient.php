@@ -8,7 +8,7 @@ include 'header.php';
             <div class="container">
                 <div class="box">
                     <h1>New Patient</h1>
-                    <form action="formquery.php" method="post">
+                    <form action="npatientquery.php" method="post">
                         <label for="pssn">Social Security:</label><br>
                         <input type="password" id="pssn" name="pssn" placeholder="XXX-XX-XXXX" maxlength="9"><br><br>
                         
