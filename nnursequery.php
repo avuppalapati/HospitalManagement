@@ -6,7 +6,7 @@ $nname = $_POST["nname"];
 $nsex = $_POST["nsex"];
 $ndob = $_POST["ndob"];
 
-$query = "INSERT INTO `databases`.`nurses`(`nssn`, `nname`, `sex`, `dob`) VALUES ('$nssn', '$nname', '$nsex', '$ndob')";
+$query = "INSERT INTO `hospitaldb`.`nurses`(`nssn`, `nname`, `sex`, `dob`) VALUES ('$nssn', '$nname', '$nsex', '$ndob')";
 $result = mysqli_query($con, $query);
 
 header('Location: index.php');

@@ -36,10 +36,10 @@ include 'header.php';
                         <select name="doctor" id="doctor">
                             <option value="" disabled selected hidden>Select Doctor</option>
                             <?php 
-                                $query = 'select dname from doctors';
+                                $query = 'select drname from doctors';
                                 $result = mysqli_query($con, $query);
                                 while($row = mysqli_fetch_array($result)){
-                                ?>    <option value="<?php echo $row['dname'];?>"><?php echo $row['dname'];};?> </option> 
+                                ?>    <option value="<?php echo $row['drname'];?>"><?php echo $row['drname'];};?> </option> 
                         </select> <br><br>
                         
                         <label for="nurse">Nurse:</label>
