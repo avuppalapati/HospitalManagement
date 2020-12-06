@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-Olive
-
-"""
 from faker import Faker
 import pandas as pd
 import numpy as np
@@ -77,7 +72,7 @@ def weight(min, size):
 def phone(size):
     phone= []
     for i in range(size):
-        phone.append(fake.pyint(min_value=10000000000, max_value=99999999999))
+        phone.append(fake.pyint(min_value=1000000000, max_value=9999999999))
     return phone
 
 def department(size):
@@ -126,7 +121,7 @@ ndf['nname'] = ntemp[0]
 ndf['sex'] = ntemp[1]
 ndf['dob'] = dob(22, 75, nnum)
 
-ndf.to_csv('nurses.csv')
+ndf.to_csv('nurses.csv', index=False)
 
 
 # ----------------------------------------------------------------------------
@@ -138,7 +133,7 @@ ddf['dname'] = ['ICU', 'Gastroenterology', 'General Surgery', 'Gynecology',
                      'Psychology', 'Traditional Chinese Medicine',
                      'Dermatology']
 ##ddf['head'] = #Replace manually 
-ddf.to_csv('departments.csv')
+ddf.to_csv('departments.csv', index=False)
 
 class DeptProvider(BaseProvider):
     def dept(self):
@@ -157,17 +152,16 @@ def dept(size):
     return z
 # ----------------------------------------------------------------------------
 # ----------------------------------------------------------------------------
-#DoctORS
+#DOCTORS
 
 drnum = 30
 drtemp = gen_namegender(drnum)
-docdf = pd.DataFrame(columns=['dssn', 'drname', 'dob', 'sex', 'dept_id'])
+docdf = pd.DataFrame(columns=['dssn', 'drname', 'dob', 'sex'])
 docdf['dssn'] = gen_ssn(drnum)
 docdf['drname'] = drtemp[0]
 docdf['sex'] = drtemp[1]
 docdf['dob'] = dob(30, 75, drnum)
-docdf['dept_id'] = dept(drnum)
-docdf.to_csv('doctors.csv')
+docdf.to_csv('doctors.csv', index=False)
 
 # ----------------------------------------------------------------------------
 #Emergency Contact
@@ -178,7 +172,7 @@ ecdf = pd.DataFrame(columns=['essn', 'ecname', 'phone'])
 ecdf['essn'] = gen_ssn(ecnum)
 ecdf['ecname'] = ectemp[0]
 ecdf['phone'] = phone(ecnum)
-docdf.to_csv('emergency_contact.csv')
+ecdf.to_csv('emergency_contact.csv', index=False)
 
 # ----------------------------------------------------------------------------
 #Insurance
@@ -189,7 +183,7 @@ idf['iname'] = ['UnitedHealth', 'Kaiser Foundation', 'Anthem Inc.',
                      'Humana', 'Cigna Health', 'Wellcare', 
                      'Blue Cross Blue Shield', 'Carefirst Inc.', 'Metropolitan',
                      'Highmark Group']
-
+idf.to_csv('insurance.csv', index=False)
 
 # ----------------------------------------------------------------------------
 # ----------------------------------------------------------------------------
@@ -203,6 +197,7 @@ pdf['sex'] = temp[1]
 pdf['dob'] = dob(12, 110, pnum)
 pdf['weight'] = weight(80, pnum)
 pdf['diagnosis'] = diagnosis(pnum)
+pdf.to_csv('patients.csv', index=False)
 
 # ----------------------------------------------------------------------------
 # New providers
@@ -253,16 +248,27 @@ def nurs(size):
 
 # ----------------------------------------------------------------------------
 ##FK
-pdf['doctor_id'] = doc(pnum)
-pdf['insurance_id'] = ins(pnum)
-pdf['nurse_id'] = nurs(pnum)
-pdf['ec_id'] = ecdf['essn']
+treats = pd.DataFrame(columns=['pssn', 'nssn'])
+diagnose = pd.DataFrame(columns=['pssn', 'dssn'])
+has_ec = pd.DataFrame(columns=['pssn', 'essn'])
+insured = pd.DataFrame(columns=['pssn', 'iid'])
+works_in = pd.DataFrame(columns=['dssn', 'did'])
 
-pdf.to_csv('patients.csv')
+treats['pssn'] = pdf['pssn']
+diagnose['pssn'] = pdf['pssn']
+has_ec['pssn'] = pdf['pssn']
+insured['pssn'] = pdf['pssn']
+works_in['dssn'] = docdf['dssn']
 
 
+treats['nssn'] = ndf['nssn'] 
+diagnose['dssn'] = docdf['dssn']
+has_ec['essn'] = ecdf['essn']
+insured['iid'] = idf['iid']
+works_in['did'] = dept(drnum)
 
-
-
-
-
+treats.to_csv('treats.csv', index=False)
+diagnose.to_csv('diagnose.csv', index=False)
+has_ec.to_csv('has_ec.csv', index=False)
+insured.to_csv('insured.csv', index=False)
+works_in.to_csv('works_in', index=False)
