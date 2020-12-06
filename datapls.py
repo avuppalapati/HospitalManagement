@@ -238,11 +238,6 @@ class NursProvider(BaseProvider):
         return np.random.choice(x)
     
 fake.add_provider(NursProvider)
-def nurs(size):
-    z = []
-    for i in range(size):
-        z.append(fake.nurs())
-    return z
 
 
 
@@ -261,7 +256,7 @@ insured['pssn'] = pdf['pssn']
 works_in['dssn'] = docdf['dssn']
 
 
-treats['nssn'] = nurs(len(treats['nssn']))
+treats['nssn'] = nurs(pnum)
 diagnose['dssn'] = doc(pnum)
 has_ec['essn'] = ecdf['essn']
 insured['iid'] = ins(pnum)
@@ -271,4 +266,4 @@ treats.to_csv('treats.csv', index=False)
 diagnose.to_csv('diagnose.csv', index=False)
 has_ec.to_csv('has_ec.csv', index=False)
 insured.to_csv('insured.csv', index=False)
-works_in.to_csv('works_in', index=False)
+works_in.to_csv('works_in.csv', index=False)
