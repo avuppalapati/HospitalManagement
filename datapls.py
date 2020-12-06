@@ -261,10 +261,10 @@ insured['pssn'] = pdf['pssn']
 works_in['dssn'] = docdf['dssn']
 
 
-treats['nssn'] = ndf['nssn'] 
-diagnose['dssn'] = docdf['dssn']
+treats['nssn'] = nurs(len(treats['nssn']))
+diagnose['dssn'] = doc(pnum)
 has_ec['essn'] = ecdf['essn']
-insured['iid'] = idf['iid']
+insured['iid'] = ins(pnum)
 works_in['did'] = dept(drnum)
 
 treats.to_csv('treats.csv', index=False)
