@@ -15,12 +15,12 @@ $departments = $_GET['departments'];
 if($staff == "Nurses"){
     $query = "SELECT nname, sex, dob FROM nurses WHERE 1 = 1";
         if (!empty($sex)){
-            $query .= " AND sex = '$sex'";
+            $query = $query." AND sex = '$sex'";
         }
         if(!empty($dob)){
-            $query .= " AND dob = '$dob'";
+            $query = $query." AND dob = '$dob'";
         }
-
+        echo $query;
     $result = mysqli_query($con, $query);
     echo "<tr><td><b>Name</b></td><td><b>Sex</b></td><td><b>Date of Birth</b></td></tr>";
     while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
@@ -29,7 +29,7 @@ if($staff == "Nurses"){
 }
 
 else if ($staff == "Doctors"){
-    $query = "SELECT doc.drname, doc.sex, doc.dob, dep.dname FROM doctors doc, departments dep WHERE doc.dept_id = dep.did";
+    $query = "SELECT doc.drname, doc.sex, doc.dob, dep.dname FROM doctors doc, departments dep, works_in w WHERE doc.dept_id = dep.did AND w.did_works_in = w.drssn_works_in";
     if (!empty($sex)){
         $query .= " AND sex = '$sex'";
     }

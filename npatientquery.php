@@ -32,9 +32,19 @@ $result = mysqli_query($con, $query);
 $row = mysqli_fetch_array($result);
 $essn = $row['essn'];
 
-$query = "INSERT INTO `hospitaldb`.`patients` (`pssn`, `pname`, `sex`, `dob`, `weight`, `diagnosis`, `doctor_id`, 
-`insurance_id`, `nurse_id`, `ec_id`) VALUES ('$pssn', '$pname', '$sex', '$dob', '$weight', '$diagnosis', '$dssn', 
-'$iid', '$nssn', '$essn')";
+$query = "INSERT INTO `hospitaldb`.`patients` (`pssn`, `pname`, `sex`, `dob`, `weight`, `diagnosis`) VALUES ('$pssn', '$pname', '$sex', '$dob', '$weight', '$diagnosis')";
+$result = mysqli_query($con, $query);
+
+$query = "INSERT INTO `hospitaldb`.`treats` (`pssn_treats`, `nssn_treats`) VALUES ('$pssn', '$drssn')";
+$result = mysqli_query($con, $query);
+
+$query = "INSERT INTO `hospitaldb`.`has_ec` (`pssn_has_ec`, `ecssn_has_ec`) VALUES ('$pssn', '$ecssn')";
+$result = mysqli_query($con, $query);
+
+$query = "INSERT INTO `hospitaldb`.`insured` (`pssn_insured`, `iid_insured`) VALUES ('$pssn', '$iid')";
+$result = mysqli_query($con, $query);
+
+$query = "INSERT INTO `hospitaldb`.`diagnose` (`pssn_diagnose`, `dssn_diagnose`) VALUES ('$pssn', '$dssn')";
 $result = mysqli_query($con, $query);
 
 header('Location: index.php');
