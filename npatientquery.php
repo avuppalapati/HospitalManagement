@@ -4,7 +4,7 @@ include 'header.php';
 $pssn = $_POST["pssn"];
 $pname = $_POST["name"];
 $sex = $_POST["sex"];
-$dob = $_POST["birthday"];
+$dob = $_POST["dob"];
 $weight = $_POST["weight"];
 $diagnosis = $_POST["diagnosis"];
 $drname = $_POST["doctor"];
