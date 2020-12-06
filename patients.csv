@@ -1,41 +1,41 @@
-pssn,pname,sex,dob,weight
-606920042,Logan Fox,M,10/18/1919,287
-959605779,Scott Singh,M,10/28/1971,151
-545033059,David Fox,M,2/8/1940,166
-936870213,Curtis Huerta,M,3/30/1935,104
-771102291,Matthew Medina,M,8/20/1999,203
-916337600,Mr. George Conrad,M,3/30/1997,256
-241507547,Miranda Brown,F,5/14/2003,96
-907172978,Maria Campbell,F,4/27/1949,166
-256613962,Cathy Klein,F,7/5/1920,173
-686088295,Heather Martinez,F,10/23/1994,154
-252284321,Steven Brown,M,11/7/1976,87
-560458179,Michael Russell,M,5/24/1985,170
-368488402,Richard Garcia,M,6/27/1920,207
-353523642,Shawn Garrett,M,10/6/1960,183
-630985777,Angela Williams,F,2/7/1973,227
-631482001,Mr. William Ramirez,M,11/6/2007,207
-434248174,Joseph Ramirez,M,4/21/1986,127
-840409397,Crystal Daniels,F,10/31/1921,163
-444457705,Nicholas Wade,M,9/23/1925,143
-633171880,Katrina Davidson,F,7/15/1998,111
-637685524,Kathy Robinson,F,11/6/1973,154
-408810092,Alexandra Goodman,F,7/8/1978,277
-782287209,Raymond Contreras,M,1/24/1995,229
-883248655,James Smith,M,11/28/1991,171
-827821398,Gregory Martinez,M,6/8/1911,208
-421633163,Laura Massey,F,8/7/2001,174
-983365927,Yvonne Kelly,F,1/21/1970,185
-156164487,Mrs. Rachael Schroeder,F,4/19/1926,172
-989245587,Robert Cox,M,7/13/1934,261
-734329154,James Nelson,M,8/31/1996,135
-200257369,Kevin Watkins,M,3/31/1988,172
-104746824,Natasha Schmidt,F,10/25/2007,103
-416178369,Ryan Miller,M,8/21/1914,139
-326076045,Louis Richardson,M,6/24/1965,148
-655411964,Eddie Russell,M,2/2/1931,192
-206691081,Daniel Jones,M,2/7/1941,282
-838094072,Mark Russell,M,8/17/1984,145
-185046064,Toni Hamilton,F,7/26/2002,240
-608231071,Marcus Vaughn,M,1/24/1938,219
-637557914,Robert Rodriguez,M,9/23/2003,231
+pssn,pname,sex,dob,weight,diagnosis
+220071793,Tiffany Parsons,F,1/17/1962,201,Reflux esophagitis
+892253440,Brendan Larson,M,2/10/1997,86,Depressive disorder
+672726377,Taylor Adams DDS,F,8/23/1915,87,Urinary tract infection
+599124835,Lisa Gaines,F,1/27/1942,193,Anxiety
+254796892,Dustin Johnson,M,11/4/1965,287,Reflux esophagitis
+381656575,Jennifer Wright,F,11/23/1961,298,Allergic rhinitis
+167944877,Kent Sanchez,M,5/10/1951,154,Acute bronchitisAsthma
+360759447,Kyle Adams,M,4/16/1990,168,Allergic rhinitis
+227501007,Dennis Ford,M,11/13/1986,116,Allergic rhinitis
+795917024,Kathryn Hodges,F,4/23/2003,94,Peanut allergies
+360516480,Christopher Christian,M,11/3/1933,113,Dry skin
+623296714,Antonio Anderson,M,4/22/1920,260,Urinary tract infection
+510786118,Samantha Villegas,F,12/31/1913,171,Hypertension
+923565355,Kara Moon,F,5/7/1930,94,Dry skin
+948366152,Lawrence Soto MD,M,8/18/1984,136,Peanut allergies
+293509742,Benjamin Long,M,3/29/1937,110,Dry skin
+856480563,Kaitlyn Nelson,F,3/14/1926,158,Allergic rhinitis
+515721173,Natasha Arnold,F,12/30/2004,270,Allergic rhinitis
+202011525,Mark Nelson,M,10/30/1911,271,Depressive disorder
+459980139,Amy Moon,F,9/28/1929,201,Hypertension
+540704066,Grant Moore,M,4/22/1911,102,Peanut allergies
+898766040,Jason Li,M,3/10/2004,120,Allergic rhinitis
+690014330,Patrick Nelson,M,8/14/1967,168,Anxiety
+990519100,Jose Cooper,M,8/5/1972,294,Covid-19
+195902580,Chelsea Davis,F,11/17/1997,191,ADHD
+521828831,John Alvarez,M,7/8/1957,165,Dry skin
+862450136,Jonathan Gardner,M,8/27/1929,292,Nail fungus
+562201062,Robert Graham,M,10/1/1928,165,Hyperlipidemia
+603081465,Donald Mcdonald,M,7/27/1968,206,Covid-19
+653233103,Kathy Morse,F,2/6/1925,210,Depressive disorder
+226901372,Michael Peters,M,12/10/1972,90,Reflux esophagitis
+604165724,Jessica Orr,F,2/21/1995,83,Osteoarthritis
+635526360,Olivia Avery,F,9/16/1952,256,Hypothyroidism
+850004919,Nicole Fisher,F,9/9/1943,125,Reflux esophagitis
+769812054,Robert Scott,M,11/6/1957,299,Diabetes
+191620357,Shannon Chapman,F,11/10/2007,292,Hypertension
+243994289,Andrew Lawrence,M,5/8/1994,87,Anxiety
+606912790,Kevin Patterson,M,8/29/1979,132,Acute bronchitisAsthma
+742493538,Jessica Rangel,F,9/5/1934,159,Hypertension
+398494250,Craig Green,M,10/7/2003,162,Covid-19
