@@ -26,7 +26,9 @@ CREATE TABLE `departments` (
   `did` int(9) NOT NULL,
   `dname` varchar(45) NOT NULL,
   `head` int(9) NOT NULL,
-  PRIMARY KEY (`did`)
+  PRIMARY KEY (`did`),
+  KEY `head_fk_idx` (`head`),
+  CONSTRAINT `head_fk` FOREIGN KEY (`head`) REFERENCES `doctors` (`dssn`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -36,7 +38,7 @@ CREATE TABLE `departments` (
 
 LOCK TABLES `departments` WRITE;
 /*!40000 ALTER TABLE `departments` DISABLE KEYS */;
-INSERT INTO `departments` VALUES (1953,'Gynecology',0),(2168,'Emergency Services',0),(2551,'Cardiology',0),(2955,'Urology',0),(3783,'Gastroenterology',0),(4187,'General Surgery',0),(4827,'Dermatology',0),(5484,'Traditional Chinese Medicine',0),(5691,'ICU',0),(9290,'Psychology',0);
+INSERT INTO `departments` VALUES (1953,'Gynecology',112135790),(2168,'Emergency Services',131612946),(2551,'Cardiology',191249475),(2955,'Urology',273449008),(3783,'Gastroenterology',312228253),(4187,'General Surgery',378778183),(4827,'Dermatology',431399529),(5484,'Traditional Chinese Medicine',543666088),(5691,'ICU',698141145),(9290,'Psychology',699640270);
 /*!40000 ALTER TABLE `departments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,8 +54,8 @@ CREATE TABLE `diagnose` (
   `pssn_diagnose` int(9) NOT NULL,
   PRIMARY KEY (`dssn_diagnose`,`pssn_diagnose`),
   KEY `pssn_fk_idx` (`pssn_diagnose`),
-  CONSTRAINT `dssn_diagnose_fk` FOREIGN KEY (`dssn_diagnose`) REFERENCES `doctors` (`dssn`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `pssn_diagnose_fk` FOREIGN KEY (`pssn_diagnose`) REFERENCES `patients` (`pssn`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `dssn_diagnose_fk` FOREIGN KEY (`dssn_diagnose`) REFERENCES `doctors` (`dssn`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `pssn_diagnose_fk` FOREIGN KEY (`pssn_diagnose`) REFERENCES `patients` (`pssn`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -130,8 +132,8 @@ CREATE TABLE `has_ec` (
   `pssn_has_ec` int(9) NOT NULL,
   PRIMARY KEY (`essn_has_ec`,`pssn_has_ec`),
   KEY `pssn_fk_idx` (`pssn_has_ec`),
-  CONSTRAINT `essn_has_ec_fk` FOREIGN KEY (`essn_has_ec`) REFERENCES `emergency_contact` (`essn`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `pssn_has_ec_fk` FOREIGN KEY (`pssn_has_ec`) REFERENCES `patients` (`pssn`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `essn_has_ec_fk` FOREIGN KEY (`essn_has_ec`) REFERENCES `emergency_contact` (`essn`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `pssn_has_ec_fk` FOREIGN KEY (`pssn_has_ec`) REFERENCES `patients` (`pssn`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -181,8 +183,8 @@ CREATE TABLE `insured` (
   `pssn_insured` int(9) NOT NULL,
   PRIMARY KEY (`iid_insured`,`pssn_insured`),
   KEY `ppsn_fk_idx` (`pssn_insured`),
-  CONSTRAINT `iid_insured_fk` FOREIGN KEY (`iid_insured`) REFERENCES `insurance` (`iid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `ppsn_insured_fk` FOREIGN KEY (`pssn_insured`) REFERENCES `patients` (`pssn`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `iid_insured_fk` FOREIGN KEY (`iid_insured`) REFERENCES `insurance` (`iid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ppsn_insured_fk` FOREIGN KEY (`pssn_insured`) REFERENCES `patients` (`pssn`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -262,8 +264,8 @@ CREATE TABLE `treats` (
   `pssn_treats` int(9) NOT NULL,
   PRIMARY KEY (`nssn_treats`,`pssn_treats`),
   KEY `pssn_fk_idx` (`pssn_treats`),
-  CONSTRAINT `nssn_treats_fk` FOREIGN KEY (`nssn_treats`) REFERENCES `nurses` (`nssn`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `pssn_treats_fk` FOREIGN KEY (`pssn_treats`) REFERENCES `patients` (`pssn`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `nssn_treats_fk` FOREIGN KEY (`nssn_treats`) REFERENCES `nurses` (`nssn`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `pssn_treats_fk` FOREIGN KEY (`pssn_treats`) REFERENCES `patients` (`pssn`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -313,4 +315,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-06  2:51:38
+-- Dump completed on 2020-12-06 10:58:41
