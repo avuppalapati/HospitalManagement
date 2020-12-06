@@ -7,6 +7,7 @@ include 'header.php';
         <section class="main">
             <div class="container">
                 <div class="box">
+                    <h1>New Emergency Contact</h1>
                     <form action="necquery.php" method="post">
                         <label for="ecssn">Social Security:</label><br>
                         <input type="password" id="ecssn" name="ecssn" placeholder="XXX-XX-XXXX" maxlength="9"><br><br>

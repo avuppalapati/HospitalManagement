@@ -10,7 +10,7 @@ include 'header.php';
                     <h1>New Patient</h1>
                     <form action="npatientquery.php" method="post">
                         <label for="pssn">Social Security:</label><br>
-                        <input type="password" id="pssn" name="pssn" placeholder="XXX-XX-XXXX" maxlength="9"><br><br>
+                        <input type="password" id="pssn" name="pssn" placeholder="XXX-XX-XXXX" maxlength="9" required><br><br>
                         
                         <label for="name">Full Name:</label><br>
                         <input type="text" id="name" name="name" placeholder="John Doe"><br><br>
@@ -33,8 +33,8 @@ include 'header.php';
                         <textarea id="diagnosis" name="diagnosis" cols="70" rows="10" placeholder="Type Here"></textarea><br><br>
                         
                         <label for="doctor">Doctor:</label>
-                        <select name="doctor" id="doctor">
-                            <option value="" disabled selected hidden>Select Doctor</option>
+                        <select name="doctor" id="doctor" required>
+                            <option value="">Select Doctor</option>
                             <?php 
                                 $query = 'select drname from doctors';
                                 $result = mysqli_query($con, $query);
@@ -43,8 +43,8 @@ include 'header.php';
                         </select> <br><br>
                         
                         <label for="nurse">Nurse:</label>
-                        <select name="nurse" id="nurse">
-                            <option value="" disabled selected hidden>Select Nurse</option>
+                        <select name="nurse" id="nurse" required>
+                            <option value="">Select Nurse</option>
                             <?php 
                                 $query = 'select nname from nurses';
                                 $result = mysqli_query($con, $query);
@@ -54,7 +54,7 @@ include 'header.php';
                         
                         <label for="insurance">Insurance:</label>
                         <select name="insurance" id="insurance">
-                            <option value="" disabled selected hidden>Select Insurance</option>
+                            <option value="">Select Insurance</option>
                             <?php 
                                 $query = 'select iname from insurance';
                                 $result = mysqli_query($con, $query);
