@@ -23,7 +23,7 @@ include 'header.php';
 
                         <label>Sex:</label><br>
                         <input type="radio" id="none" name="sex" value="" CHECKED>
-                        <label for="none">None</label><br>
+                        <label for="none">All</label><br>
                         <input type="radio" id="male" name="sex" value="M">
                         <label for="male">Male</label><br>
                         <input type="radio" id="female" name="sex" value="F">
